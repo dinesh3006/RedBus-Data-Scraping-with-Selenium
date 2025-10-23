@@ -242,10 +242,10 @@ def bus_routes_page_mysql():
     
     rating_cutoff = st.sidebar.slider(
         "Minimum Rating (Stars)", 
-        min_value=float(min_rating_ui), 
-        max_value=float(max_rating_ui), 
-        value=float(min_rating_ui), 
-        step=1.0 # Rating slider with step of 1.0 (whole numbers).
+        min_value=0.0,   # Set minimum to 0
+        max_value=5.0,   # Set maximum to 5
+        value=0.0,       # Set default value to 0 (shows all buses)
+        step=1.0         # Step by 1.0 (whole numbers)
     )
 
     # 6. Seats Available Filter
@@ -456,4 +456,5 @@ def main():
 
 
 if __name__ == "__main__":
+
     main() # Executes the main function when the script starts.
